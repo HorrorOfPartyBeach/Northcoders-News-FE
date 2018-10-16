@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
+import Nav from './components/Nav';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
           <header><h1>Header</h1></header>
-          <nav>Home Topics Users</nav>
+          <Nav />
           
           <section>
             <h2>The Rise Of Thinking Machines: How IBM's Watson Takes On The World</h2>
