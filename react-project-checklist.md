@@ -18,7 +18,7 @@
 [X] Ensure you have React DevTools running
 
 ## Static
-[] Make blank components (functional or class?) as per your plan
+[X] Make blank components (functional or class?) as per your plan
 [] Create reuasable components e.g. buttons, inputs
 [] Export and import components as per your hierarchy
 [] Check everything is hooked up
