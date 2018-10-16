@@ -14,8 +14,8 @@
 [X] Create your app directory (e.g. with create-react-app)
 [X] Run sudo sysctl fs.inotify.max_user_watches=99999
 [X] Run your app
-[] Git init (unless cloned!), gitignore config, make an initial commit
-[] Ensure you have React DevTools running
+[X] Git init (unless cloned!), gitignore config, make an initial commit
+[X] Ensure you have React DevTools running
 
 ## Static
 [] Make blank components (functional or class?) as per your plan
