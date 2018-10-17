@@ -7,8 +7,13 @@ export const getTopics = () => {
     .then(({data}) => data.topics)
 }
 
-export const getArticles = (topic) => {
-    const url = topic ? `${API_URL}/topics/${topic}articles` : `${API_URL}/articles`
+export const getArticles = (slug) => {
+    const url =slug ? `${API_URL}/topics/${slug}/articles` : `${API_URL}/articles`
     return axios.get(url)
     .then(({data}) => data.articles)
+}
+
+export const alterVote = (id, direction) => {
+    return axios.patch(`${API_URL}/articles/${id}?vote=${direction}`)
+    .then(({data}) => data.article)
 }
