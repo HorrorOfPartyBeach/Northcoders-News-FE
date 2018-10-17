@@ -12,9 +12,9 @@ class Login extends Component {
             <input
             type="text"
             id="username"
-            name="username"
+            name="username" 
             onChange={this.handleChange}
-            value={this.state.username}/>
+            value={this.state.username} /> 
             <button>Log in</button>
           </form>  
         );

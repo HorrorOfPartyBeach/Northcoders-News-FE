@@ -10,7 +10,7 @@ class Nav extends Component {
     render() {
     return (
         <nav>
-            <Link to="/"><Button text={"Home"}/></Link> 
+            <Link to="/"><Button text={"Home"}/> </Link> 
             {this.state.topics.map(({_id, slug, title}) => {
                 return <Link key={_id} to={`/topics/${slug}`}>
                 <Button text={title}/> </Link>
