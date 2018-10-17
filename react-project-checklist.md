@@ -6,9 +6,9 @@
 [X] Name your components
 [X] Draw component hierarchy
 [X] Plan routing
-[] Label where you will require functions that change state
-[] Label where you will require data
-[] Determine from this where you will require state & hold functions
+[X] Label where you will require functions that change state
+[X] Label where you will require data
+[X] Determine from this where you will require state & hold functions
 
 ## Setup
 [X] Create your app directory (e.g. with create-react-app)
@@ -19,20 +19,20 @@
 
 ## Static
 [X] Make blank components (functional or class?) as per your plan
-[] Create reuasable components e.g. buttons, inputs
-[] Export and import components as per your hierarchy
-[] Check everything is hooked up
+[X] Create reuasable components e.g. buttons, inputs
+[X] Export and import components as per your hierarchy
+[X] Check everything is hooked up
     - you may want to add positional styling here to match your planned layout. DO NOT do any cosmetic styling yet!
-[] Write static render methods with mock data
-[] Add expected propTypes (adapt this as necessary)
+[X] Write static render methods with mock data
+[X] Add expected propTypes (adapt this as necessary)
 
 ## Dynamic (order may be a bit looser here!)
-[] Create .api file
-[] Construct componentDidMount functions
-[] Create functions that setState
-[] Add expected props to component instantiation
-[] Add mapping / looping for creating multiple components
-[] Deal with component lifecycle issues, e.g. making new api calls on componentDidUpdate
+[X] Create .api file
+[X] Construct componentDidMount functions
+[X] Create functions that setState
+[X] Add expected props to component instantiation
+[X] Add mapping / looping for creating multiple components
+[X] Deal with component lifecycle issues, e.g. making new api calls on componentDidUpdate
 [] Add event handlers
 
 ## Style
