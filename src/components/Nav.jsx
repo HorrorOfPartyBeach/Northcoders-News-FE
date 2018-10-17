@@ -13,7 +13,7 @@ class Nav extends Component {
             <Link to="/"><Button text={"Home"}/></Link> 
             {this.state.topics.map(({_id, slug, title}) => {
                 return <Link key={_id} to={`/topics/${slug}`}>
-                {title}</Link>
+                {title} </Link>
                 })
             }
             <Button text={"Users"}/>
