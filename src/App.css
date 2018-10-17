@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css?family=Fredoka+One');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
 @supports (display: grid) {
   .App {
     height: 100vh;
@@ -8,26 +11,43 @@
 }
 
 header {
-  border: 2px solid rgb(252, 190, 154);
-  background: rgba(209, 145, 145, 0.4);
+  background: rgba(255, 170, 102, 1);
+  font-family: 'Fredoka One', cursive;
+  font-size: 2.5rem;
 }
 
 nav {
-  border: 2px solid rgb(180, 206, 151);
-  background: rgba(133, 150, 129, 0.4);
+  background:rgba(197, 255, 168, 1);
   text-align: left;
+  padding: 10px;
 }
 
 .main {
-  border: 2px solid rgb(194, 137, 196);
-  background: rgba(172, 120, 146, 0.4);
+  background: rgb(255, 255, 255, 1);
+}
+
+article {
+  font-family: 'Roboto', sans-serif;
 }
 
 footer {
-  border: 2px solid rgb(209, 169, 169);
-  background: rgba(247, 242, 213, 0.4);
+  background: rgba(255, 119, 119, 1);
 }
 
-/* Button {
-  
-} */
+Button {
+	display: inline-block;
+  margin: 0;
+  padding: 0.4rem 1rem;
+	border: 0;
+	border-radius: 0.317rem;
+	background-color: rgb(7, 145, 145);
+	color: #fff;
+	text-decoration: none;
+	font-weight: 700;
+	font-size: 1rem;
+  line-height: 1;
+	font-family: "Helvetica Neue", Arial, sans-serif;
+	cursor: pointer;
+	-webkit-appearance: none;
+	-webkit-font-smoothing: antialiased;
+}
