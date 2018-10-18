@@ -35,8 +35,12 @@ export const getComments = async (id) => {
     return data.comments;
 }
 
-export const postComment = async (id, body, created_by) => {
-    const  {data} = await axios.post(`${API_URL}/articles/${id}/comments`, {body, created_by}) 
+export const postComment = async (articleId, body, created_by) => {
+    const  {data} = await axios.post(`${API_URL}/articles/${articleId}/comments`, {body, created_by}) 
     console.log(data)
     return data;
+}
+
+export const removeComment = async (commentId) => {
+    return await axios.delete(`${API_URL}/comments/${commentId}`)
 }

@@ -30,11 +30,15 @@ article {
   font-family: 'Roboto', sans-serif;
 }
 
+.commentInput {
+  height: 40px;
+}
+
 footer {
   background: rgba(255, 119, 119, 1);
 }
 
-Button {
+.navButtons {
 	display: inline-block;
   margin: 0;
   padding: 0.4rem 1rem;
@@ -50,4 +54,14 @@ Button {
 	cursor: pointer;
 	-webkit-appearance: none;
 	-webkit-font-smoothing: antialiased;
+}
+
+.votesButtons {
+  padding: 0.5em;
+}
+
+.topicSubhead {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 1rem;
+  font-weight: bold;
 }

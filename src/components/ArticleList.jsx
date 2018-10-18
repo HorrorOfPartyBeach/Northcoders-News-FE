@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import * as api from '../Api.js';
 import Voter from '../components/Voter';
-import {Link} from '@reach/router';
+// import {Link} from '@reach/router';
+import NavLink from '../components/NavLink';
 
 class ArticleList extends Component {
     state = {
@@ -14,7 +15,7 @@ class ArticleList extends Component {
             <p>Articles</p>
             {this.state.articles.map(({_id, title, belongs_to, votes}) => {
                  return <div key={_id}>
-                <Link to={`/articles/${_id}`}><h2 key={_id}>{title}</h2></Link>
+                <NavLink to={`/articles/${_id}`}><h2 key={_id}>{title}</h2></NavLink>
                 <Voter id={_id} voteUpArticle={this.voteUpArticle} voteDownArticle={this.voteDownArticle} votes={votes}/>
                 <p>{belongs_to}</p>
                 </div>

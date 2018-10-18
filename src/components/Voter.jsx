@@ -8,11 +8,12 @@ class Voter extends Component {
     return (
         <div>
             <button onClick={() => this.props.voteUpArticle(this.props.id, "up")}>UP</button>
-            <p>{this.props.votes}</p>
+            <span className="votesButtons"> {this.props.votes} </span>
             <button onClick={() => this.props.voteDownArticle(this.props.id, "down")}>DOWN</button>
         </div>
     )
     }
 }
+
 
 export default Voter;

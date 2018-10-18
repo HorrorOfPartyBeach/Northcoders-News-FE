@@ -15,6 +15,10 @@ class Comments extends Component {
                 {comments.map(comment => {
                 return <div key={comment._id}>
                 <p>{comment.body}</p>
+                <span>{comment.created_by.username} </span> 
+                <span>{comment.created_at} </span> 
+                <span>{comment.votes} </span>
+                <button className="deleteButton" onClick={() => this.deleteComment(comment._id)}>Delete</button>
             </div>
             })}
             </div>
@@ -38,6 +42,16 @@ class Comments extends Component {
             this.setState({
                 comments: [comment,...this.state.comments]
             })
+        })
+    }
+
+    deleteComment =(commentId) => {
+        api.removeComment(commentId)
+        .then(() => {
+            this.setState((state) => ({
+                comments: this.state.comments.filter(comment => comment._id !== commentId)
+            })
+            )
         })
     }
 }

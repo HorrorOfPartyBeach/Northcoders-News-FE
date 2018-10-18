@@ -10,11 +10,14 @@ class CommentAdder extends Component {
             <form onSubmit={this.handleSubmit}>
             <label htmlFor="addyourcomment">Add your comment: </label>
             <input
+            className="commentInput"
+            size="35"
             type="text"
+            value={this.state.body}
             onChange={this.handleChange}
             name="body"
             />
-            <button>Post Comment</button>
+            <button type="submit">Post Comment</button>
             </form>
         )
     }
@@ -28,7 +31,11 @@ class CommentAdder extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault()
-        this.props.addComment(this.state.body)
+        const body = this.state.body;
+        this.props.addComment(body)
+        this.setState({
+            body: ''
+        })
     }
 }
 

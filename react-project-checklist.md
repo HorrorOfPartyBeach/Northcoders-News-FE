@@ -33,7 +33,7 @@
 [X] Add expected props to component instantiation
 [X] Add mapping / looping for creating multiple components
 [X] Deal with component lifecycle issues, e.g. making new api calls on componentDidUpdate
-[] Add event handlers
+[X] Add event handlers
 
 ## Style
 [] Add classNames
