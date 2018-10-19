@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 class Voter extends Component {
     state = {
-        voteCount: 0
+        voteModifier: 0
     }
     render() {
     return (

@@ -20,8 +20,11 @@ class App extends Component {
     return (
       <div className="App">
           <header><h1>Northcoders News</h1></header>
-          <Nav handleLogout={this.handleLogout}/>
-          <Login login={this.login} user={this.state.user}>
+          <Nav handleLogout={this.handleLogout} user={this.state.user}/>
+
+         
+          <Login login={this.login} user={this.state.user}> 
+
         <Router className="main">
           <ArticleList path='/'user={this.state.user}/>
           <ArticleList path='/articles'user={this.state.user}/>
@@ -36,6 +39,7 @@ class App extends Component {
       </div>
     );
   }
+
   login = (username) => {
     api.getUser(username)
     .then(user => {
@@ -45,14 +49,13 @@ class App extends Component {
     })
   }
 
-  handleLogout = (isLoggedIn) => {
-    if(isLoggedIn === true){
+  handleLogout = () => {
     this.setState({
-      username: {}
+      user: {}
     });
   }
-  };
 
-}
+  }
+
 
 export default App;

@@ -49,8 +49,6 @@ class ArticleList extends Component {
         this.setState((state) => ({
             articles: this.state.articles.map(article => {
                 console.log(this.state.articles.votes)
-                // article._id === id && direction === "up" ? {...article, votes: article.votes + 1}
-                // : {...article, votes: article.votes - 1} : article;
                 if(article._id === id && direction === "up") {
                     return {...article, votes: article.votes + 1}
                 } else if (article._id === id && direction === "down") {

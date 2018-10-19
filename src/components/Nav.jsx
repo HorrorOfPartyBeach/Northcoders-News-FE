@@ -5,10 +5,7 @@ import * as api from '../Api.js';
 
 class Nav extends Component {
     state = {
-        username: "",
-        topics: [],
-        isLoggedIn: true,
-        user: {}
+        topics: []
     }
     render() {
     return (
@@ -20,8 +17,10 @@ class Nav extends Component {
                 })
             }
             <Link to="/users"><Button text={"Users"} /> </Link>
-            <Button text={"Log Out"} onClick={() => this.props.handleLogout(this.state.isLoggedIn)}/>
-        </nav>
+            {this.props.user.username &&
+            <Button text={"Log Out"} onClick={() => this.props.handleLogout(this.props.user)}/>
+            }
+            </nav>
     )}
 
     componentDidMount() {
