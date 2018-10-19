@@ -7,20 +7,20 @@ import Article from './components/Article';
 import Login from './components/Login';
 import * as api from './Api';
 import Users from './components/Users';
+import NotFound from './components/NotFound';
 
 class App extends Component {
   state = {
     articles: [],
     user: {},
-    users: [],
-    isLoggedIn: false 
+    users: []
   }
   
   render() {
     return (
       <div className="App">
           <header><h1>Northcoders News</h1></header>
-          <Nav />
+          <Nav handleLogout={this.handleLogout}/>
           <Login login={this.login} user={this.state.user}>
         <Router className="main">
           <ArticleList path='/'user={this.state.user}/>
@@ -28,6 +28,7 @@ class App extends Component {
           <ArticleList path='/topics/:topic'user={this.state.user}/>
           <Article path='/articles/:id' user={this.state.user}/>
           <Users path='/users' users={this.state.users}/>
+          <NotFound default/>
         </Router>
         </Login>
   
@@ -39,17 +40,17 @@ class App extends Component {
     api.getUser(username)
     .then(user => {
       this.setState({
-        isLoggedIn: true,
         user
       })
     })
   }
 
-  handleLogout = () => {
-    if(this.isLoggedIn === true)
+  handleLogout = (isLoggedIn) => {
+    if(isLoggedIn === true){
     this.setState({
       username: {}
     });
+  }
   };
 
 }

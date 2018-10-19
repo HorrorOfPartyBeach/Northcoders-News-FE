@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import * as api from '../Api';
 import Comments from '../components/Comments';
+import {navigate} from '@reach/router';
 
 class Article extends Component {
     state = {
@@ -25,6 +26,9 @@ class Article extends Component {
             this.setState({
                 article
             })
+        })
+        .catch((err) => {
+            navigate('/error', {replace: true, state: {msg:err.message}})
         })
     }
 }

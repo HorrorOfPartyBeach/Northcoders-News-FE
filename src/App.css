@@ -30,11 +30,16 @@ a{
   background: rgb(255, 255, 255, 1);
 }
 
+input {
+  display: inline-block;
+}
+
 .articleCard {
   font-family: 'Roboto', sans-serif;
   border: solid 1px black;
-  margin: 2rem;
+  margin: 6rem;
   padding: 20px;
+  box-shadow: 10px 5px 5px lightgrey;
 }
 
 .commentInput {

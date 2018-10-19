@@ -7,7 +7,8 @@ class Nav extends Component {
     state = {
         username: "",
         topics: [],
-        isLoggedIn: true
+        isLoggedIn: true,
+        user: {}
     }
     render() {
     return (
@@ -19,7 +20,7 @@ class Nav extends Component {
                 })
             }
             <Link to="/users"><Button text={"Users"} /> </Link>
-            <Button text={"Log Out"} onClick={() => this.handleLogout(this.isLoggedIn)}/>
+            <Button text={"Log Out"} onClick={() => this.props.handleLogout(this.state.isLoggedIn)}/>
         </nav>
     )}
 

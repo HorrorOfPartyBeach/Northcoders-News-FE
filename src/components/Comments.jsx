@@ -71,6 +71,8 @@ class Comments extends Component {
         }))
     }
 
+    
+
     // voteUpComment = (id) => {
     //     api.alterVote(id, "up")
     //     this.setState((state) => ({
