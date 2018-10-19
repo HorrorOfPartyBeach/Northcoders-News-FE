@@ -52,7 +52,11 @@ $ git clone https://github.com/HorrorOfPartyBeach/Northcoders-News-FE.git
 
 * Run `cd Northcoders-News-FE` and then `npm install`
 
-----------------
+## Start & watch
+
+* Run `npm start`
+
+--------------
 
 ## **Deployment**
 
