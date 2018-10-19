@@ -5,7 +5,9 @@ import * as api from '../Api.js';
 
 class Nav extends Component {
     state = {
-        topics: []
+        username: "",
+        topics: [],
+        isLoggedIn: true
     }
     render() {
     return (
@@ -16,7 +18,8 @@ class Nav extends Component {
                 <Button text={title}/> </Link>
                 })
             }
-            <Button text={"Users"}/>
+            <Link to="/users"><Button text={"Users"} /> </Link>
+            <Button text={"Log Out"} onClick={() => this.handleLogout(this.isLoggedIn)}/>
         </nav>
     )}
 

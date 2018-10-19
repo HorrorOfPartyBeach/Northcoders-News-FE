@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import * as api from '../Api.js';
 import Voter from '../components/Voter';
-// import {Link} from '@reach/router';
 import NavLink from '../components/NavLink';
+import ArticleAdder from '../components/ArticleAdder';
 
 class ArticleList extends Component {
     state = {
@@ -10,14 +10,16 @@ class ArticleList extends Component {
     }
 
     render() {
+        console.log(this.state.articles)
        return (
            <main>
-            <p>Articles</p>
+            <h2>Articles</h2>
+            <ArticleAdder addArticle={this.addArticle}/>
             {this.state.articles.map(({_id, title, belongs_to, votes}) => {
-                 return <div key={_id}>
+                 return <div key={_id} className="articleCard">
                 <NavLink to={`/articles/${_id}`}><h2 key={_id}>{title}</h2></NavLink>
-                <Voter id={_id} voteUpArticle={this.voteUpArticle} voteDownArticle={this.voteDownArticle} votes={votes}/>
-                <p>{belongs_to}</p>
+                <Voter id={_id} vote={this.vote} votes={votes}/>
+                <p className="topicSubhead">{belongs_to}</p>
                 </div>
             })}
            </main>
@@ -33,29 +35,55 @@ class ArticleList extends Component {
         }
     }
 
-    voteUpArticle = (id) => {
-        api.alterVote(id, "up")
-        this.setState((state) => ({
-            articles: this.state.articles.map(article => {
-                if(article._id === id) {
-                    return {...article, votes: article.votes + 1}
-                }
-                return article;
+    addArticle = (title, body) => {
+        api.postArticle(this.props.topic, title, body, this.props.user._id)
+        .then(article => {
+            this.setState({
+                articles: [article,...this.state.articles]
             })
-        }))
+        })
     }
 
-    voteDownArticle = (id) => {
-        api.alterVote(id, "down")
+    vote = (id, direction) => {
+        api.alterVote(id, direction)
         this.setState((state) => ({
             articles: this.state.articles.map(article => {
-                if(article._id === id) {
+                console.log(this.state.articles.votes)
+                // article._id === id && direction === "up" ? {...article, votes: article.votes + 1}
+                // : {...article, votes: article.votes - 1} : article;
+                if(article._id === id && direction === "up") {
+                    return {...article, votes: article.votes + 1}
+                } else if (article._id === id && direction === "down") {
                     return {...article, votes: article.votes - 1}
                 }
                 return article;
             })
         }))
     }
+
+    // voteUpArticle = (id) => {
+    //     api.alterVote(id, "up")
+    //     this.setState((state) => ({
+    //         articles: this.state.articles.map(article => {
+    //             if(article._id === id) {
+    //                 return {...article, votes: article.votes + 1}
+    //             }
+    //             return article;
+    //         })
+    //     }))
+    // }
+
+    // voteDownArticle = (id) => {
+    //     api.alterVote(id, "down")
+    //     this.setState((state) => ({
+    //         articles: this.state.articles.map(article => {
+    //             if(article._id === id) {
+    //                 return {...article, votes: article.votes - 1}
+    //             }
+    //             return article;
+    //         })
+    //     }))
+    // }
 
     fetchArticles = () => {
         api.getArticles(this.props.topic).then(articles => {

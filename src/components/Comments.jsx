@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import * as api from '../Api';
-import CommentAdder from './CommentAdder'
+import CommentAdder from './CommentAdder';
+import Voter from './Voter';
 
 class Comments extends Component {
     state = {
@@ -8,7 +9,6 @@ class Comments extends Component {
     }
     render() {
         const {comments} = this.state
-        console.log(comments)
         return (
             <div>
                 <CommentAdder addComment={this.addComment}/>
@@ -17,7 +17,8 @@ class Comments extends Component {
                 <p>{comment.body}</p>
                 <span>{comment.created_by.username} </span> 
                 <span>{comment.created_at} </span> 
-                <span>{comment.votes} </span>
+                <p>{comment.votes} </p>
+                <Voter id={comment._id} vote={this.vote} votes={comments.votes}/> 
                 <button className="deleteButton" onClick={() => this.deleteComment(comment._id)}>Delete</button>
             </div>
             })}
@@ -54,6 +55,45 @@ class Comments extends Component {
             )
         })
     }
+
+    vote = (id, direction) => {
+        api.alterVote(id, direction)
+        this.setState((state) => ({
+            comments: this.state.comments.map(comment => {
+                console.log(this.state.comments.votes)
+                if(comment._id === id && direction === "up") {
+                    return {...comment, votes: comment.votes + 1}
+                } else if (comment._id === id && direction === "down") {
+                    return {...comment, votes: comment.votes - 1}
+                }
+                return comment;
+            })
+        }))
+    }
+
+    // voteUpComment = (id) => {
+    //     api.alterVote(id, "up")
+    //     this.setState((state) => ({
+    //         comments: this.state.comments.map(comment => {
+    //             if(comment._id === id) {
+    //                 return {...comment, votes: comment.votes + 1}
+    //             }
+    //             return comment;
+    //         })
+    //     }))
+    // }
+
+    // voteDownComment = (id) => {
+    //     api.alterVote(id, "down")
+    //     this.setState((state) => ({
+    //         comments: this.state.comments.map(comment => {
+    //             if(comment._id === id) {
+    //                 return {...comment, votes: comment.votes - 1}
+    //             }
+    //             return comment;
+    //         })
+    //     }))
+    // }
 }
 
 export default Comments;

@@ -13,6 +13,12 @@ export const getArticles = (topic) => {
     .then(({data}) => data.articles)
 }
 
+export const postArticle = async (topic, title, body, created_by) => {
+    const  {data} = await axios.post(`${API_URL}/topics/${topic}/articles`, {topic, title, body, created_by}) 
+    console.log(data)
+    return data;
+}
+
 export const alterVote = (id, direction) => {
     return axios.patch(`${API_URL}/articles/${id}?vote=${direction}`)
     .then(({data}) => data.article)
@@ -21,6 +27,11 @@ export const alterVote = (id, direction) => {
 export const getArticle = async (id) => {
     const {data} = await axios.get(`${API_URL}/articles/${id}`)
     return data.article;
+}
+
+export const getUsers = () => {
+    return axios.get(`${API_URL}/users`)
+    .then(({data}) => data.users)
 }
 
 export const getUser = async (username) => {

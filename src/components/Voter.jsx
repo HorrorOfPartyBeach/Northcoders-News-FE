@@ -7,9 +7,9 @@ class Voter extends Component {
     render() {
     return (
         <div>
-            <button onClick={() => this.props.voteUpArticle(this.props.id, "up")}>UP</button>
+            <button onClick={() => this.props.vote(this.props.id, "up")}>UP</button>
             <span className="votesButtons"> {this.props.votes} </span>
-            <button onClick={() => this.props.voteDownArticle(this.props.id, "down")}>DOWN</button>
+            <button onClick={() => this.props.vote(this.props.id, "down")}>DOWN</button>
         </div>
     )
     }

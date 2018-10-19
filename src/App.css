@@ -22,12 +22,19 @@ nav {
   padding: 10px;
 }
 
+a{
+  text-decoration: none;
+}
+
 .main {
   background: rgb(255, 255, 255, 1);
 }
 
-article {
+.articleCard {
   font-family: 'Roboto', sans-serif;
+  border: solid 1px black;
+  margin: 2rem;
+  padding: 20px;
 }
 
 .commentInput {
