@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
+import {Link} from '@reach/router';
 import * as api from '../Api.js';
 import Voter from '../components/Voter';
-import NavLink from '../components/NavLink';
 import ArticleAdder from '../components/ArticleAdder';
 
 class ArticleList extends Component {
@@ -17,7 +17,7 @@ class ArticleList extends Component {
             <ArticleAdder addArticle={this.addArticle}/>
             {this.state.articles.map(({_id, title, belongs_to, votes}) => {
                  return <div key={_id} className="articleCard">
-                <NavLink to={`/articles/${_id}`}><h2 key={_id}>{title}</h2></NavLink>
+                <Link to={`/articles/${_id}`}><h2 key={_id}>{title}</h2></Link>
                 <Voter id={_id} vote={this.vote} votes={votes}/>
                 <p className="topicSubhead">{belongs_to}</p>
                 </div>

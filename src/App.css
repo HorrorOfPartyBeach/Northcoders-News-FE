@@ -18,7 +18,7 @@ header {
 
 nav {
   background:rgba(197, 255, 168, 1);
-  text-align: left;
+  text-align: center;
   padding: 10px;
 }
 
@@ -30,8 +30,37 @@ a{
   background: rgb(255, 255, 255, 1);
 }
 
-input {
-  display: inline-block;
+.container {
+  display: flex;
+  flex-direction: column;
+  box-shadow: lightgoldenrodyellow;
+  padding: 1em;
+  margin-left: 15em;
+  margin-right: 15em;
+  background-color: lightcoral;
+  border-radius: 15px;
+}
+
+#articleTitlearea {
+  height: auto !important;
+  height:100%;
+  min-height: 100%;
+  width: 95%;
+  margin-left: auto;
+  margin-top: 5px;
+  background-color: whitesmoke;
+  border-radius: 4px;
+}
+
+#articleTextarea {
+  height: auto !important;
+  height:100%;
+  min-height: 100%;
+  width: 95%;
+  margin-left: auto;
+  margin-top: 5px;
+  background-color: whitesmoke;
+  border-radius: 4px;
 }
 
 .articleCard {

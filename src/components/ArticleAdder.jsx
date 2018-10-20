@@ -8,27 +8,28 @@ class ArticleAdder extends Component {
 
     render() {
         return (
+            <div className="container">
             <form onSubmit={this.handleSubmit}>
-            <label htmlFor="ArticleTitle">Article Title: </label>
-            <input
-            className="articleTitle"
-            maxLength="55"
+            <textarea id="articleTitlearea" rows="2" cols="80"
+            aria-label="article title area"
+            placeholder="Write title in here..."
             type="text"
             value={this.state.title}
             onChange={this.handleChange}
             name="title"
-            />
-            <label htmlFor="text">Text: </label>
-            <input
-            className="articleInput"
-            size="45"
-            type="text"
+            /> 
+            <p>
+            <textarea id="articleTextarea" rows="6" cols="80"
+            aria-label="article text area"
+            placeholder="Write text in here..."
+            height="100"
             value={this.state.body}
             onChange={this.handleChange}
             name="body"
-            />
+            /> </p>
             <button type="submit">Post New Article</button>
             </form>
+            </div>
         )
     }
     handleChange = (event) => {
