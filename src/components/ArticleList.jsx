@@ -15,9 +15,11 @@ class ArticleList extends Component {
            <main>
             <h2>Articles</h2>
             <ArticleAdder addArticle={this.addArticle}/>
-            {this.state.articles.map(({_id, title, belongs_to, votes}) => {
+            {this.state.articles.map(({_id, title, created_by, belongs_to, votes}) => {
                  return <div key={_id} className="articleCard">
                 <Link to={`/articles/${_id}`}><h2 key={_id}>{title}</h2></Link>
+                <span><img src={created_by.avatar_url} className="avatar" alt="User Avatar" />{created_by.username}</span>
+                <p></p>
                 <Voter id={_id} vote={this.vote} votes={votes}/>
                 <p className="topicSubhead">{belongs_to}</p>
                 </div>
@@ -58,30 +60,6 @@ class ArticleList extends Component {
             })
         }))
     }
-
-    // voteUpArticle = (id) => {
-    //     api.alterVote(id, "up")
-    //     this.setState((state) => ({
-    //         articles: this.state.articles.map(article => {
-    //             if(article._id === id) {
-    //                 return {...article, votes: article.votes + 1}
-    //             }
-    //             return article;
-    //         })
-    //     }))
-    // }
-
-    // voteDownArticle = (id) => {
-    //     api.alterVote(id, "down")
-    //     this.setState((state) => ({
-    //         articles: this.state.articles.map(article => {
-    //             if(article._id === id) {
-    //                 return {...article, votes: article.votes - 1}
-    //             }
-    //             return article;
-    //         })
-    //     }))
-    // }
 
     fetchArticles = () => {
         api.getArticles(this.props.topic).then(articles => {
