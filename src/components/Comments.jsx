@@ -59,7 +59,7 @@ class Comments extends Component {
     vote = (id, direction) => {
         api.alterVote(id, direction)
         this.setState((state) => ({
-            comments: this.state.comments.map(comment => {
+            comments: state.comments.map(comment => {
                 console.log(this.state.comments.votes)
                 if(comment._id === id && direction === "up") {
                     return {...comment, votes: comment.votes + 1}
@@ -71,31 +71,6 @@ class Comments extends Component {
         }))
     }
 
-    
-
-    // voteUpComment = (id) => {
-    //     api.alterVote(id, "up")
-    //     this.setState((state) => ({
-    //         comments: this.state.comments.map(comment => {
-    //             if(comment._id === id) {
-    //                 return {...comment, votes: comment.votes + 1}
-    //             }
-    //             return comment;
-    //         })
-    //     }))
-    // }
-
-    // voteDownComment = (id) => {
-    //     api.alterVote(id, "down")
-    //     this.setState((state) => ({
-    //         comments: this.state.comments.map(comment => {
-    //             if(comment._id === id) {
-    //                 return {...comment, votes: comment.votes - 1}
-    //             }
-    //             return comment;
-    //         })
-    //     }))
-    // }
 }
 
 export default Comments;
