@@ -13,7 +13,7 @@
 header {
   background: rgba(255, 170, 102, 1);
   font-family: 'Fredoka One', cursive;
-  font-size: 2.5rem;
+  font-size: 2.5em;
 }
 
 nav {
@@ -105,4 +105,9 @@ footer {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   font-size: 1rem;
   font-weight: bold;
+}
+
+.avatar {
+  height: 5%;
+  width: 5%;
 }
