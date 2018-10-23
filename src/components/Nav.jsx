@@ -18,7 +18,10 @@ class Nav extends Component {
             }
             <Link to="/users"><Button text={"Users"} /> </Link>
             {this.props.user.username &&
-            <Button text={"Log Out"} onClick={() => this.props.handleLogout(this.props.user)}/>
+            <Button text={"Log Out"} onClick={() => this.props.handleLogout(this.props.user)} />
+            }
+            {this.props.user.username &&
+            <span> Current user: {this.props.user.username}</span>
             }
             </nav>
     )}
