@@ -3,7 +3,8 @@ import React, {Component} from 'react';
 class ArticleAdder extends Component {
     state = {
         title: "",
-        body: ""
+        body: "",
+        topic: []
     }
 
     render() {
@@ -18,6 +19,9 @@ class ArticleAdder extends Component {
             onChange={this.handleChange}
             name="title"
             /> 
+            {/* <p> <select>
+            <option value={this.state.topic}>{this.state.topic}</option>
+            </select> </p> */}
             <p>
             <textarea id="articleTextarea" rows="6" cols="80"
             aria-label="article text area"
