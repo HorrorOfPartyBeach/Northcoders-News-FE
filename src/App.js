@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Router} from '@reach/router';
+import './normalize.css';
 import './App.css';
 import Nav from './components/Nav';
 import ArticleList from './components/ArticleList';
