@@ -7,7 +7,7 @@ A React app, similar to Reddit.
 
 Northcoders News is a news aggregator which has articles divided by topic; each article has comments which can be added to or deleted by the user who posts them and votes which can be incrememented or decremented.
 
-The Front End app has been deployed by Netlify and can be found at https://5bc9c9b182d3f1791ea834c3--nc-news-frontend.netlify.com/
+The Front End app has been deployed by Netlify and can be found at https://5bddfc143813f064068a9638--nc-news-frontend.netlify.com/ (Best viewed in Chrome)
 
 The API has been deployed by Heroku and can be found at https://nc-news33.herokuapp.com/
 
